@@ -8,6 +8,15 @@ CREATE TABLE cliente (
 
 ALTER TABLE cliente ADD CONSTRAINT pk_cli_id_cli PRIMARY KEY ( cliente_id );
 
+CREATE TABLE hotel (
+    hotel_id  NUMBER(4) NOT NULL,
+    nombre    VARCHAR2(20) NOT NULL,
+    direcci�n VARCHAR2(30) NOT NULL,
+    categoria VARCHAR2(1) NOT NULL
+);
+
+ALTER TABLE hotel ADD CONSTRAINT pk_hot_id_hotel PRIMARY KEY ( hotel_id );
+
 CREATE TABLE habitacion (
     habitacion_id  NUMBER(6) NOT NULL,
     tipo           VARCHAR2(15) NOT NULL,
@@ -21,14 +30,7 @@ ALTER TABLE habitacion
     ADD CONSTRAINT fk_hotel_habit FOREIGN KEY ( hotel_id )
         REFERENCES hotel ( hotel_id );
 
-CREATE TABLE hotel (
-    hotel_id  NUMBER(4) NOT NULL,
-    nombre    VARCHAR2(20) NOT NULL,
-    direcci�n VARCHAR2(30) NOT NULL,
-    categoria VARCHAR2(1) NOT NULL
-);
 
-ALTER TABLE hotel ADD CONSTRAINT pk_hot_id_hotel PRIMARY KEY ( hotel_id );
 
 CREATE TABLE reserva (
     reserva_id               NUMBER(10) NOT NULL,
