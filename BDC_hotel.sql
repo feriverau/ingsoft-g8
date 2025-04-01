@@ -13,15 +13,18 @@ CREATE TABLE habitacion (
     tipo           VARCHAR2(15) NOT NULL,
     capacidad      NUMBER(2) NOT NULL,
     precio         NUMBER(7) NOT NULL,
-    hotel_hotel_id NUMBER(4) NOT NULL
+    hotel_id NUMBER(4) NOT NULL
 );
 
 ALTER TABLE habitacion ADD CONSTRAINT pk_habit_id_habit PRIMARY KEY ( habitacion_id );
+ALTER TABLE habitacion
+    ADD CONSTRAINT fk_hotel_habit FOREIGN KEY ( hotel_id )
+        REFERENCES hotel ( hotel_id );
 
 CREATE TABLE hotel (
     hotel_id  NUMBER(4) NOT NULL,
     nombre    VARCHAR2(20) NOT NULL,
-    dirección VARCHAR2(30) NOT NULL,
+    direcciï¿½n VARCHAR2(30) NOT NULL,
     categoria VARCHAR2(1) NOT NULL
 );
 
@@ -32,20 +35,18 @@ CREATE TABLE reserva (
     fecha_entrada            DATE NOT NULL,
     fecha_salida             DATE NOT NULL,
     cantidad_personas        NUMBER(3) NOT NULL,
-    cliente_cliente_id       NUMBER(8) NOT NULL,
-    habitacion_habitacion_id NUMBER(6) NOT NULL
+    cliente_id       NUMBER(8) NOT NULL,
+    habitacion_id NUMBER(6) NOT NULL
 );
 
 ALTER TABLE reserva ADD CONSTRAINT pk_res_id_res PRIMARY KEY ( reserva_id );
 
 ALTER TABLE reserva
-    ADD CONSTRAINT fk_cli_res FOREIGN KEY ( cliente_cliente_id )
+    ADD CONSTRAINT fk_cli_res FOREIGN KEY ( cliente_id )
         REFERENCES cliente ( cliente_id );
 
 ALTER TABLE reserva
-    ADD CONSTRAINT fk_habit_res FOREIGN KEY ( habitacion_habitacion_id )
+    ADD CONSTRAINT fk_habit_res FOREIGN KEY ( habitacion_id )
         REFERENCES habitacion ( habitacion_id );
 
-ALTER TABLE habitacion
-    ADD CONSTRAINT fk_hotel_habit FOREIGN KEY ( hotel_hotel_id )
-        REFERENCES hotel ( hotel_id );
+
