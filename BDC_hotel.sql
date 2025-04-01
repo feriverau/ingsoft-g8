@@ -11,7 +11,7 @@ ALTER TABLE cliente ADD CONSTRAINT pk_cli_id_cli PRIMARY KEY ( cliente_id );
 CREATE TABLE hotel (
     hotel_id  NUMBER(4) NOT NULL,
     nombre    VARCHAR2(20) NOT NULL,
-    direcci�n VARCHAR2(30) NOT NULL,
+    direccion VARCHAR2(30) NOT NULL,
     categoria VARCHAR2(1) NOT NULL
 );
 
