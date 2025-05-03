@@ -1,0 +1,7 @@
+{
+  "name": "Ing_Software",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
