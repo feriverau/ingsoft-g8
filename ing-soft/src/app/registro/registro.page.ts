@@ -47,6 +47,9 @@ export class RegistroPage {
       return;
     }
 
+    // Verificación de los datos antes de guardarlos
+    console.log('Guardando usuario:', this.usuario);
+
     localStorage.setItem('usuario', JSON.stringify(this.usuario));
     this.mostrarToast('Usuario registrado correctamente.');
 
