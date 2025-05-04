@@ -1,20 +1,21 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="fondo">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="form-container">
+    <ion-input label="Nombre" [(ngModel)]="usuario.nombre" fill="outline"></ion-input>
+    <ion-input label="Apellido" [(ngModel)]="usuario.apellido" fill="outline"></ion-input>
+    <ion-input label="Correo" type="email" [(ngModel)]="usuario.correo" fill="outline"></ion-input>
+    <ion-input label="Teléfono" type="tel" [(ngModel)]="usuario.telefono" fill="outline"></ion-input>
+    <ion-input label="Contraseña" type="password" [(ngModel)]="usuario.contrasena" fill="outline"></ion-input>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-button expand="block" (click)="registrarUsuario()">
+      Registrar Usuario
+    </ion-button>
   </div>
+
+  <div class="logo-texto">
+    <h1>Pacific Reef</h1>
+    <img src="assets/images/logo.png" alt="Logo" />
+  </div>
+
 </ion-content>
+
