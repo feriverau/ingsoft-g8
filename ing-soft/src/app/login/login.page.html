@@ -1,21 +1,16 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Login
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="fondo">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Bienvenido</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="form-container">
+    <ion-input label="Correo" type="email" [(ngModel)]="correo" fill="outline"></ion-input>
+    <ion-input label="Contraseña" type="password" [(ngModel)]="contrasena" fill="outline"></ion-input>
 
-  <div id="container">
-    <strong>Por favor, inicia sesión para continuar.</strong>
-    <!-- Aquí puedes agregar tus campos de formulario de login -->
-    <ion-button expand="full" routerLink="/home">Iniciar sesión</ion-button>
+    <ion-button expand="block" (click)="login()">Iniciar Sesión</ion-button>
+    <ion-button expand="block" fill="clear" (click)="irARegistro()">¿No tienes cuenta? Regístrate</ion-button>
   </div>
+
+  <div class="logo-texto">
+    <h1>Pacific Reef</h1>
+    <img src="assets/images/logo.png" alt="Logo" />
+  </div>
+
 </ion-content>

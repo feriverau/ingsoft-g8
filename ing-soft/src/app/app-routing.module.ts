@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+    loadComponent: () => import('./login/login.page').then(m => m.LoginPage)
   },
   {
     path: 'home',
@@ -28,3 +28,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
