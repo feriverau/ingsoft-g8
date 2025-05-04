@@ -1,0 +1,7 @@
+{
+  "name": "ing-soft",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
