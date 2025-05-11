@@ -7,22 +7,21 @@ module.exports = function (config) {
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
-      require('karma-chrome-launcher'),
+      require('karma-chrome-launcher'), // Utiliza el lanzador de Chrome
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
       jasmine: {
-        // you can add configuration options for Jasmine here
-        // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
-        // for example, you can disable the random execution with `random: false`
-        // or set a specific seed with `seed: 4321`
+        // Puedes agregar configuraciones de Jasmine aquí
+        // Por ejemplo, puedes desactivar la ejecución aleatoria con `random: false`
+        // o establecer una semilla específica con `seed: 4321`
       },
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
+      clearContext: false // Deja visible la salida de Jasmine Spec Runner en el navegador
     },
     jasmineHtmlReporter: {
-      suppressAll: true // removes the duplicated traces
+      suppressAll: true // Elimina los rastros duplicados
     },
     coverageReporter: {
       dir: require('path').join(__dirname, './coverage/app'),
@@ -32,12 +31,12 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress', 'kjhtml'], // Los reportes que se mostrarán
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['Chrome'], // Usa Chrome como navegador
     singleRun: false,
     restartOnFileChange: true
   });

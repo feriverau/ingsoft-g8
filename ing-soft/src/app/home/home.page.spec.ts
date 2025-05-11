@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
-
 import { HomePage } from './home.page';
+import { IonicModule } from '@ionic/angular';
 
 describe('HomePage', () => {
   let component: HomePage;
@@ -9,8 +8,7 @@ describe('HomePage', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HomePage],
-      imports: [IonicModule.forRoot()]
+      imports: [HomePage, IonicModule],  // Cambiado de declarations a imports
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomePage);
